@@ -1,0 +1,32 @@
+// Copyright 2020 Shreya Bose
+
+#ifndef  INC_MEAN_H_  // NO LINT
+#define  INC_MEAN_H_  // NO LINT
+
+/* This child of the Statistic class should be a concrete class---that is, it
+ * should implement both Collect and Calculate methods from the parent class
+ * Statistic. I will let you decide how to implement those methods.
+ *
+ * The Calculate method should return the mean of data gathered by the Collect
+ * method. You are free to implement both methods by any means (pun not
+ * intended) you choose.
+ */
+#include <inc/statistic.h>
+#include <vector>
+namespace csce240 {
+
+class Mean : public std::vector<double>, public Statistic {
+ public:
+  Mean();
+
+  void Collect(double num);
+
+  double Calculate() const;
+
+ protected:
+  std::vector<double> vector_;
+};
+
+}  // namespace csce240
+
+#endif  // INC_MEAN_H_
